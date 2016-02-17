@@ -28,20 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btNewGame = new System.Windows.Forms.Button();
+            this.btCloseGame = new System.Windows.Forms.Button();
+            this.btShowPoints = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btHit = new System.Windows.Forms.Button();
+            this.btStand = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btNewGame
+            // 
+            this.btNewGame.BackColor = System.Drawing.Color.LightBlue;
+            this.btNewGame.Location = new System.Drawing.Point(13, 13);
+            this.btNewGame.Name = "btNewGame";
+            this.btNewGame.Size = new System.Drawing.Size(86, 34);
+            this.btNewGame.TabIndex = 0;
+            this.btNewGame.Text = "NEW GAME";
+            this.btNewGame.UseVisualStyleBackColor = false;
+            this.btNewGame.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btCloseGame
+            // 
+            this.btCloseGame.BackColor = System.Drawing.Color.LightCoral;
+            this.btCloseGame.Location = new System.Drawing.Point(105, 13);
+            this.btCloseGame.Name = "btCloseGame";
+            this.btCloseGame.Size = new System.Drawing.Size(91, 34);
+            this.btCloseGame.TabIndex = 1;
+            this.btCloseGame.Text = "CLOSE GAME";
+            this.btCloseGame.UseVisualStyleBackColor = false;
+            this.btCloseGame.Click += new System.EventHandler(this.btCloseGame_Click);
+            // 
+            // btShowPoints
+            // 
+            this.btShowPoints.BackColor = System.Drawing.Color.OrangeRed;
+            this.btShowPoints.Location = new System.Drawing.Point(202, 12);
+            this.btShowPoints.Name = "btShowPoints";
+            this.btShowPoints.Size = new System.Drawing.Size(107, 34);
+            this.btShowPoints.TabIndex = 2;
+            this.btShowPoints.Text = "SHOW POINTS";
+            this.btShowPoints.UseVisualStyleBackColor = false;
+            this.btShowPoints.Click += new System.EventHandler(this.btShowPoints_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Hearts.Properties.Resources.table_blackjack;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1076, 532);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(105, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Bank";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(105, 309);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 31);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Player";
+            // 
+            // btHit
+            // 
+            this.btHit.BackColor = System.Drawing.Color.LightBlue;
+            this.btHit.Location = new System.Drawing.Point(105, 503);
+            this.btHit.Name = "btHit";
+            this.btHit.Size = new System.Drawing.Size(100, 57);
+            this.btHit.TabIndex = 8;
+            this.btHit.Text = "HIT";
+            this.btHit.UseVisualStyleBackColor = false;
+            // 
+            // btStand
+            // 
+            this.btStand.BackColor = System.Drawing.Color.LightCoral;
+            this.btStand.Location = new System.Drawing.Point(227, 503);
+            this.btStand.Name = "btStand";
+            this.btStand.Size = new System.Drawing.Size(104, 57);
+            this.btStand.TabIndex = 9;
+            this.btStand.Text = "STAND";
+            this.btStand.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 583);
+            this.ClientSize = new System.Drawing.Size(1101, 596);
+            this.Controls.Add(this.btStand);
+            this.Controls.Add(this.btHit);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btShowPoints);
+            this.Controls.Add(this.btCloseGame);
+            this.Controls.Add(this.btNewGame);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btNewGame;
+        private System.Windows.Forms.Button btCloseGame;
+        private System.Windows.Forms.Button btShowPoints;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btHit;
+        private System.Windows.Forms.Button btStand;
     }
 }
 

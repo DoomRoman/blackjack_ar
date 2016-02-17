@@ -1,1 +1,9 @@
 C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\bin\Debug\Hearts.exe.config
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\bin\Debug\Hearts.exe
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\bin\Debug\Hearts.pdb
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts AR.csprojResolveAssemblyReference.cache
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.Form1.resources
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.Properties.Resources.resources
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts AR.csproj.GenerateResource.Cache
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.exe
+C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.pdb

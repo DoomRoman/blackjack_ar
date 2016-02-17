@@ -11,7 +11,7 @@ namespace Hearts
     class CardHelper
     {
         public enum CardColors { Kreuz = 0, Pik, Herz, Karo};
-        public enum CardNumbers { Zwei = 0, Drei, Vier, Fünf, Sechs, Sieben, Acht, Neun, Zehn, Bube, Dame, Koenig, Ass};
+        public enum CardNumbers { Zwei = 2, Drei, Vier, Fünf, Sechs, Sieben, Acht, Neun, Zehn, Bube = 10, Dame = 10, Koenig = 10, Ass = 11};
 
         const int cards_cols = 13, cards_rows = 4;
         Bitmap[,] cards = new Bitmap[cards_cols, cards_rows];

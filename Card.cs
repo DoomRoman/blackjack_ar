@@ -10,14 +10,12 @@ namespace Hearts
     {
         public int Color
         {
-            get { return this.Color; }
-            set { this.Color = value; }
+            get; set;
         }
 
         public int Number
         {
-            get { return this.Number; }
-            set { this.Number = value; }
+            get; set;
         }
 
         public Card(int color, int number)
