@@ -7,3 +7,12 @@ C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hear
 C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts AR.csproj.GenerateResource.Cache
 C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.exe
 C:\Users\roman\OneDrive\Dokumente\RWTH Aachen Matse\C-sharp_Blockkurs\CS_VM\Hearts\obj\Debug\Hearts.pdb
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\bin\Debug\Hearts.exe.config
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts.exe
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts.pdb
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\bin\Debug\Hearts.exe
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\bin\Debug\Hearts.pdb
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts AR.csprojResolveAssemblyReference.cache
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts.Form1.resources
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts.Properties.Resources.resources
+C:\Users\ahense.DATABAY\Source\Repos\blackjack_ar\obj\Debug\Hearts AR.csproj.GenerateResource.Cache

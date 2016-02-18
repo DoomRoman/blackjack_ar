@@ -28,7 +28,7 @@ namespace Hearts
             getLabelsForPoints(form);
 
             timer = new Timer();
-            timer.Interval = 20;
+            timer.Interval = 400;
             timer.Tick += new EventHandler(bankStepTick);
         }
 
@@ -52,6 +52,8 @@ namespace Hearts
             this.gameHelper = new GameHelper(numberOfDecks);
             this.cardIndexBank = 0;
             this.cardIndexPlayer = 0;
+            this.gameHelper.points_bank = 0;
+            this.gameHelper.points_player = 0;
 
             deleteOldCards();
             firstCards();
@@ -63,7 +65,7 @@ namespace Hearts
             this.cardIndexPlayer = 0;
             this.gameHelper.points_bank = 0;
             this.gameHelper.points_player = 0;
-
+            renderPoints();
             deleteOldCards();
             firstCards();
         }
@@ -77,22 +79,24 @@ namespace Hearts
         {
             if (getPointsBank() > getPointsPlayer() && getPointsBank() <= 21)
             {
-                showWinMessage("Ooops", "You Loose!");
                 timer.Stop();
+                showWinMessage("Ooops", "You Loose!");
                 return;
             }
             else if (getPointsBank() < getPointsPlayer())
             {
                 nextCard(false);
+                renderPoints();
+                return;
             }
             else if (getPointsBank() == 21 && getPointsBank() == getPointsPlayer())
             {
-                showWinMessage("Tie", "It's a Tie!");
                 timer.Stop();
+                showWinMessage("Tie", "It's a Tie!");
                 return;
             }
-            showWinMessage("Winner!", "You Won!");
             timer.Stop();
+            showWinMessage("Winner!", "You Won!");
         }
 
         public void nextCard(bool player)
@@ -194,8 +198,32 @@ namespace Hearts
 
         public void showWinMessage(string title, string message)
         {
-            //todo show win message
-            Console.WriteLine(title + ": " + message);
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            Console.WriteLine("Buhuhuh");
+            result = MessageBox.Show(message, title, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                if (gameHelper.isNewGamePossible())
+                {
+                    this.newRound();
+                }
+                else
+                {
+                    buttons = MessageBoxButtons.OKCancel;
+                    result = MessageBox.Show("The game is over! The cards are drawn", "New Game?", buttons);
+
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+                        this.initStep();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }                        
+                }
+            }
         }
     }
 }
