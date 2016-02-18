@@ -81,7 +81,6 @@ namespace Hearts
             if(player)
             {
                 this.points_player += getPointsOfCard(c, player);
-                Console.WriteLine("Cardvalue: "+getPointsOfCard(c, player));
                 if((this.points_player >21) && (this.count_aces_player > 0))
                 {
                     this.points_player -= 10;
@@ -105,9 +104,9 @@ namespace Hearts
             Console.WriteLine("Cardvalue: " + c.Number);
             if (c.Number<9)
             {
-                return c.Number+1;
+                return c.Number+2;
             }
-            else if(c.Number < (int)CardHelper.CardNumbers.Ass)
+            else if(c.Number < 12)
             {
                 return 10;
             }

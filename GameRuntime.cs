@@ -57,6 +57,7 @@ namespace Hearts
 
             deleteOldCards();
             firstCards();
+            renderPoints();
         }
 
         public void newRound()
@@ -65,9 +66,12 @@ namespace Hearts
             this.cardIndexPlayer = 0;
             this.gameHelper.points_bank = 0;
             this.gameHelper.points_player = 0;
-            renderPoints();
+
+            gameHelper.count_aces_bank = 0;
+            gameHelper.count_aces_player = 0;
             deleteOldCards();
             firstCards();
+            renderPoints();
         }
 
         public void bankStep()
