@@ -101,11 +101,11 @@ namespace Hearts
 
         private int getPointsOfCard(Card c, bool player)
         {
-            if(c.Number<=10)
+            if(c.Number+1<=10)
             {
-                return c.Number;
+                return c.Number+1;
             }
-            else if(c.Number < 14)
+            else if(c.Number+1 < 14)
             {
                 return 10;
             }

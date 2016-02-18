@@ -129,6 +129,7 @@
             this.btStand.TabIndex = 9;
             this.btStand.Text = "STAND";
             this.btStand.UseVisualStyleBackColor = false;
+            this.btStand.Click += new System.EventHandler(this.btStand_Click);
             // 
             // points_bank
             // 

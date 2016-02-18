@@ -27,7 +27,7 @@ namespace Hearts
             this.form = form;
             getLabelsForPoints(form);
 
-            Timer timer = new Timer();
+            timer = new Timer();
             timer.Interval = 20;
             timer.Tick += new EventHandler(bankStepTick);
         }
@@ -70,13 +70,12 @@ namespace Hearts
 
         public void bankStep()
         {
-            int pointstoBeat = this.getPointsPlayer();
             timer.Start();
         }
 
         private void bankStepTick(Object sender, EventArgs e)
         {
-            if (getPointsBank() > getPointsPlayer())
+            if (getPointsBank() > getPointsPlayer() && getPointsBank() <= 21)
             {
                 showWinMessage("Ooops", "You Loose!");
                 timer.Stop();
@@ -141,6 +140,17 @@ namespace Hearts
         {
             gameHelper.calcPoints(c, player);
             drawPicture(c, player, (player ? cardIndexPlayer++ : cardIndexBank++));
+            if(player)
+            {
+                if(gameHelper.points_player == 21)
+                {
+                    bankStep();
+                }
+                else if(gameHelper.points_player > 21)
+                {
+                    showWinMessage("Oops!", "You Loose! You're over 21 points :-(");
+                }
+            }
         }
 
         private void drawPicture(Card c, bool player, int index)
