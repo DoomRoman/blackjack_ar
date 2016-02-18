@@ -8,7 +8,7 @@ namespace Hearts
 {
     class Game
     {
-        public static GameHelper gameHelper;
+        public static GameRuntime runtime;
         public static CardHelper cardHelper = new CardHelper();
     }
 }

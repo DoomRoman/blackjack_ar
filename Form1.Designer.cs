@@ -31,12 +31,14 @@
             this.btNewGame = new System.Windows.Forms.Button();
             this.btCloseGame = new System.Windows.Forms.Button();
             this.btShowPoints = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.background = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btHit = new System.Windows.Forms.Button();
             this.btStand = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.points_bank = new System.Windows.Forms.Label();
+            this.points_player = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.SuspendLayout();
             // 
             // btNewGame
@@ -72,18 +74,18 @@
             this.btShowPoints.UseVisualStyleBackColor = false;
             this.btShowPoints.Click += new System.EventHandler(this.btShowPoints_Click);
             // 
-            // pictureBox1
+            // background
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.background.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Hearts.Properties.Resources.table_blackjack;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1076, 532);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.background.Image = global::Hearts.Properties.Resources.table_blackjack;
+            this.background.Location = new System.Drawing.Point(13, 52);
+            this.background.Name = "background";
+            this.background.Size = new System.Drawing.Size(1076, 532);
+            this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.background.TabIndex = 3;
+            this.background.TabStop = false;
             // 
             // label1
             // 
@@ -116,6 +118,7 @@
             this.btHit.TabIndex = 8;
             this.btHit.Text = "HIT";
             this.btHit.UseVisualStyleBackColor = false;
+            this.btHit.Click += new System.EventHandler(this.btHit_Click);
             // 
             // btStand
             // 
@@ -127,11 +130,35 @@
             this.btStand.Text = "STAND";
             this.btStand.UseVisualStyleBackColor = false;
             // 
+            // points_bank
+            // 
+            this.points_bank.AutoSize = true;
+            this.points_bank.BackColor = System.Drawing.Color.Transparent;
+            this.points_bank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.points_bank.Location = new System.Drawing.Point(187, 96);
+            this.points_bank.Name = "points_bank";
+            this.points_bank.Size = new System.Drawing.Size(95, 25);
+            this.points_bank.TabIndex = 10;
+            this.points_bank.Text = "Punkte: 0";
+            // 
+            // points_player
+            // 
+            this.points_player.AutoSize = true;
+            this.points_player.BackColor = System.Drawing.Color.Transparent;
+            this.points_player.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.points_player.Location = new System.Drawing.Point(202, 315);
+            this.points_player.Name = "points_player";
+            this.points_player.Size = new System.Drawing.Size(95, 25);
+            this.points_player.TabIndex = 11;
+            this.points_player.Text = "Punkte: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 596);
+            this.Controls.Add(this.points_player);
+            this.Controls.Add(this.points_bank);
             this.Controls.Add(this.btStand);
             this.Controls.Add(this.btHit);
             this.Controls.Add(this.label2);
@@ -139,10 +166,10 @@
             this.Controls.Add(this.btShowPoints);
             this.Controls.Add(this.btCloseGame);
             this.Controls.Add(this.btNewGame);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.background);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,11 +180,13 @@
         private System.Windows.Forms.Button btNewGame;
         private System.Windows.Forms.Button btCloseGame;
         private System.Windows.Forms.Button btShowPoints;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox background;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btHit;
         private System.Windows.Forms.Button btStand;
+        private System.Windows.Forms.Label points_bank;
+        private System.Windows.Forms.Label points_player;
     }
 }
 

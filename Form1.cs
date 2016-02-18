@@ -20,8 +20,9 @@ namespace Hearts
         //New Game
         private void button1_Click(object sender, EventArgs e)
         {
-            Game.gameHelper = new GameHelper(4);
-            firstCards();
+            Game.runtime = new GameRuntime(4, this);
+            Game.runtime.initStep();
+            Game.runtime.renderPoints();
         }
 
         private void btCloseGame_Click(object sender, EventArgs e)
@@ -34,27 +35,10 @@ namespace Hearts
 
         }
 
-
-        private void firstCards()
+        private void btHit_Click(object sender, EventArgs e)
         {
-            Card c1 = Game.gameHelper.getRandomCard();
-            Card c2 = Game.gameHelper.getRandomCard();
-            Card c3 = Game.gameHelper.getRandomCard();
-            Card c4 = Game.gameHelper.getRandomCard();
-
-            addPicture(c1, false, 0);
-            addPicture(c2, true, 0);
-            addPicture(c3, false, 1);
-            addPicture(c4, true, 1);
-
-       
-        }
-
-        private void addPicture(Card c, bool player, int index)
-        {
-            PictureBox pic = new MyPictureBox(c, player, index);
-            this.Controls.Add(pic);
-            pic.BringToFront();
+            Game.runtime.nextCard(true);
+            Game.runtime.renderPoints();
         }
     }
 }

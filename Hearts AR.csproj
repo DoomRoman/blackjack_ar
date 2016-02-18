@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="GameHelper.cs" />
+    <Compile Include="GameRuntime.cs" />
     <Compile Include="MyPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

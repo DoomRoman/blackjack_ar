@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace Hearts
 {
     class GameHelper
     {
         private CardHelper cardHelper;
+
         private ArrayList cards;
 
         public int points_bank
@@ -78,7 +80,7 @@ namespace Hearts
         {
             if(player)
             {
-                this.points_player += c.Number;
+                this.points_player += getPointsOfCard(c, player);
                 if((this.points_player >21) && (this.count_aces_player > 0))
                 {
                     this.points_player -= 10;
@@ -87,7 +89,7 @@ namespace Hearts
             }
             else
             {
-                this.points_bank += c.Number;
+                this.points_bank += getPointsOfCard(c, player);
                 if ((this.points_bank > 21) && (this.count_aces_bank > 0))
                 {
                     this.points_bank -= 10;
@@ -95,6 +97,28 @@ namespace Hearts
                 }
             }
             this.total_points += c.Number;
+        }
+
+        private int getPointsOfCard(Card c, bool player)
+        {
+            if(c.Number<=10)
+            {
+                return c.Number;
+            }
+            else if(c.Number < 14)
+            {
+                return 10;
+            }
+            if(player)
+            {
+                this.count_aces_player++;
+            }
+            else
+            {
+                this.count_aces_bank++;
+            }
+            return 11;
+            
         }
 
         public bool isNewGamePossible()
