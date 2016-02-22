@@ -28,5 +28,18 @@ namespace Hearts
             this.Size = tempSize;
         }
 
+        public MyPictureBox(bool player, int index, bool backcard) : base()
+        {
+            this.Image = Game.cardHelper.drawBackcard();
+            this.Location = new Point(105 + index * 40, player ? 344 : 124);
+            this.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            this.Name = "top_card";
+
+            Size tempSize = this.Size;
+            tempSize.Height = 137;
+            this.Size = tempSize;
+        }
+
     }
 }

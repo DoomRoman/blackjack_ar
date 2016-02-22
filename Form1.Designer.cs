@@ -72,6 +72,7 @@
             this.btShowPoints.TabIndex = 2;
             this.btShowPoints.Text = "SHOW POINTS";
             this.btShowPoints.UseVisualStyleBackColor = false;
+            this.btShowPoints.Visible = false;
             this.btShowPoints.Click += new System.EventHandler(this.btShowPoints_Click);
             // 
             // background
@@ -82,7 +83,7 @@
             this.background.Image = global::Hearts.Properties.Resources.table_blackjack;
             this.background.Location = new System.Drawing.Point(13, 52);
             this.background.Name = "background";
-            this.background.Size = new System.Drawing.Size(1076, 532);
+            this.background.Size = new System.Drawing.Size(724, 532);
             this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.background.TabIndex = 3;
             this.background.TabStop = false;
@@ -90,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(109)))), ((int)(((byte)(36)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(105, 90);
             this.label1.Name = "label1";
@@ -101,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(109)))), ((int)(((byte)(36)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(105, 309);
             this.label2.Name = "label2";
@@ -118,6 +119,7 @@
             this.btHit.TabIndex = 8;
             this.btHit.Text = "HIT";
             this.btHit.UseVisualStyleBackColor = false;
+            this.btHit.Visible = false;
             this.btHit.Click += new System.EventHandler(this.btHit_Click);
             // 
             // btStand
@@ -129,12 +131,13 @@
             this.btStand.TabIndex = 9;
             this.btStand.Text = "STAND";
             this.btStand.UseVisualStyleBackColor = false;
+            this.btStand.Visible = false;
             this.btStand.Click += new System.EventHandler(this.btStand_Click);
             // 
             // points_bank
             // 
             this.points_bank.AutoSize = true;
-            this.points_bank.BackColor = System.Drawing.Color.Transparent;
+            this.points_bank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(109)))), ((int)(((byte)(36)))));
             this.points_bank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.points_bank.Location = new System.Drawing.Point(187, 96);
             this.points_bank.Name = "points_bank";
@@ -145,7 +148,7 @@
             // points_player
             // 
             this.points_player.AutoSize = true;
-            this.points_player.BackColor = System.Drawing.Color.Transparent;
+            this.points_player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(109)))), ((int)(((byte)(36)))));
             this.points_player.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.points_player.Location = new System.Drawing.Point(202, 315);
             this.points_player.Name = "points_player";
@@ -157,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 596);
+            this.ClientSize = new System.Drawing.Size(749, 596);
             this.Controls.Add(this.points_player);
             this.Controls.Add(this.points_bank);
             this.Controls.Add(this.btStand);

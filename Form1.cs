@@ -20,6 +20,9 @@ namespace Hearts
         //New Game
         private void button1_Click(object sender, EventArgs e)
         {
+            this.btHit.Visible = true;
+            this.btShowPoints.Visible = true;
+            this.btStand.Visible = true;
             Game.runtime = new GameRuntime(4, this);
             Game.runtime.initStep();
             Game.runtime.renderPoints();
@@ -32,7 +35,16 @@ namespace Hearts
 
         private void btShowPoints_Click(object sender, EventArgs e)
         {
-
+            if (this.points_bank.Visible == true)
+            {
+                this.points_bank.Visible = false;
+                this.points_player.Visible = false;
+            }
+            else
+            {
+                this.points_bank.Visible = true;
+                this.points_player.Visible = true;
+            }
         }
 
         private void btHit_Click(object sender, EventArgs e)

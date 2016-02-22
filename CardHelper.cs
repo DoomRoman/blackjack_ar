@@ -48,5 +48,10 @@ namespace Hearts
         {
             return this.cards[number, color];
         }
+        public Bitmap drawBackcard()
+        {
+            Bitmap srcBitmap = new Bitmap("../../Cards/card_backsite.jpg");
+            return srcBitmap;
+        }
     }
 }

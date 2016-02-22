@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Hearts
 {
@@ -73,6 +74,7 @@ namespace Hearts
             int index = rand.Next(0, this.cards.ToArray().Length);
             Card result = (Card)this.cards[index];
             this.cards.RemoveAt(index);
+            Thread.Sleep(rand.Next(0,75));
             return result;
         }
 
@@ -101,7 +103,6 @@ namespace Hearts
 
         private int getPointsOfCard(Card c, bool player)
         {
-            Console.WriteLine("Cardvalue: " + c.Number);
             if (c.Number<9)
             {
                 return c.Number+2;

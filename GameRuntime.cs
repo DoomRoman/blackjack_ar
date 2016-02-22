@@ -74,8 +74,21 @@ namespace Hearts
             renderPoints();
         }
 
+        private void removeTopcard()
+        {
+            // to remove topcard
+            foreach (Control item in form.Controls)
+            {
+                if (item.Name == "top_card")
+                {
+                    form.Controls.Remove(item);
+                    break; //important step
+                }
+            }
+        }
         public void bankStep()
         {
+            removeTopcard();
             timer.Start();
         }
 
@@ -141,6 +154,7 @@ namespace Hearts
             addNewCard(c1, false);
             addNewCard(c2, true);
             addNewCard(c3, false);
+            drawPictureBackcard(c3, false, cardIndexBank-1);
             addNewCard(c4, true);
         }
 
@@ -164,6 +178,13 @@ namespace Hearts
         private void drawPicture(Card c, bool player, int index)
         {
             PictureBox pic = new MyPictureBox(c, player, index);
+            form.Controls.Add(pic);
+            pic.BringToFront();
+        }
+
+        private void drawPictureBackcard(Card c, bool player, int index)
+        {
+            PictureBox pic = new MyPictureBox(player, index, true);
             form.Controls.Add(pic);
             pic.BringToFront();
         }
@@ -204,7 +225,6 @@ namespace Hearts
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
-            Console.WriteLine("Buhuhuh");
             result = MessageBox.Show(message, title, buttons);
 
             if (result == System.Windows.Forms.DialogResult.OK)
