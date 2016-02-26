@@ -53,6 +53,7 @@ namespace Hearts
             this.cardIndexBank = 0;
             this.cardIndexPlayer = 0;
             this.gameHelper.points_bank = 0;
+            this.gameHelper.points_bank_hidden = 0;
             this.gameHelper.points_player = 0;
 
             deleteOldCards();
@@ -65,6 +66,7 @@ namespace Hearts
             this.cardIndexBank = 0;
             this.cardIndexPlayer = 0;
             this.gameHelper.points_bank = 0;
+            this.gameHelper.points_bank_hidden = 0;
             this.gameHelper.points_player = 0;
 
             gameHelper.count_aces_bank = 0;
@@ -97,10 +99,11 @@ namespace Hearts
             if (getPointsBank() > getPointsPlayer() && getPointsBank() <= 21)
             {
                 timer.Stop();
+                renderPoints();
                 showWinMessage("Ooops", "You Loose!");
                 return;
             }
-            else if (getPointsBank() < getPointsPlayer())
+            else if (getPointsBank() <= getPointsPlayer())
             {
                 nextCard(false);
                 renderPoints();
@@ -109,9 +112,11 @@ namespace Hearts
             else if (getPointsBank() == 21 && getPointsBank() == getPointsPlayer())
             {
                 timer.Stop();
+                renderPoints();
                 showWinMessage("Tie", "It's a Tie!");
                 return;
             }
+            renderPoints();
             timer.Stop();
             showWinMessage("Winner!", "You Won!");
         }
@@ -154,6 +159,8 @@ namespace Hearts
             addNewCard(c1, false);
             addNewCard(c2, true);
             addNewCard(c3, false);
+            gameHelper.points_bank_hidden = gameHelper.getPointsOfCard(c3,false);
+            gameHelper.points_bank -= gameHelper.points_bank_hidden;
             drawPictureBackcard(c3, false, cardIndexBank-1);
             addNewCard(c4, true);
         }
@@ -162,7 +169,8 @@ namespace Hearts
         {
             gameHelper.calcPoints(c, player);
             drawPicture(c, player, (player ? cardIndexPlayer++ : cardIndexBank++));
-            if(player)
+            renderPoints();
+            if (player)
             {
                 if(gameHelper.points_player == 21)
                 {
@@ -197,7 +205,10 @@ namespace Hearts
             }
             while (formContainsMyPictureBoxes());
         }
-
+        public void recalcBankPoints()
+        {
+            gameHelper.points_bank += gameHelper.points_bank_hidden;
+        }
         private void clearMyPictureBoxes()
         {
             foreach (Control ctrl in this.form.Controls)
@@ -231,6 +242,7 @@ namespace Hearts
             {
                 if (gameHelper.isNewGamePossible())
                 {
+                    Console.WriteLine(gameHelper.total_points);
                     this.newRound();
                 }
                 else

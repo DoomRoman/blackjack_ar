@@ -19,6 +19,10 @@ namespace Hearts
         {
             get; set;
         }
+        public int points_bank_hidden
+        {
+            get; set;
+        }
         public int points_player
         {
             get; set;
@@ -50,9 +54,10 @@ namespace Hearts
             this.cards = new ArrayList();
 
             this.points_bank = 0;
+            this.points_bank_hidden = 0;
             this.points_player = 0;
             this.total_points = 0;
-            this.max_points = 380 * numberOfDecks;
+            this.max_points = 340 * numberOfDecks;
 
             //Durchlaufe Array und erstelle für jedes Deck Kartenfarben
             for (int deck = 0; deck < numberOfDecks; deck++)
@@ -101,7 +106,7 @@ namespace Hearts
             this.total_points += c.Number;
         }
 
-        private int getPointsOfCard(Card c, bool player)
+        public int getPointsOfCard(Card c, bool player)
         {
             if (c.Number<9)
             {
@@ -126,7 +131,7 @@ namespace Hearts
 
         public bool isNewGamePossible()
         {
-            return ((this.max_points - this.total_points) >= 42);
+            return ((this.max_points - this.total_points) >= 175);
         }
     }
 }

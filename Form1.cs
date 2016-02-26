@@ -50,11 +50,12 @@ namespace Hearts
         private void btHit_Click(object sender, EventArgs e)
         {
             Game.runtime.nextCard(true);
-            Game.runtime.renderPoints();
         }
 
         private void btStand_Click(object sender, EventArgs e)
         {
+            Game.runtime.recalcBankPoints();
+            Game.runtime.renderPoints();
             Game.runtime.bankStep();
         }
     }
