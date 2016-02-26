@@ -157,9 +157,10 @@ namespace Hearts
             Card c4 = this.gameHelper.getRandomCard();
 
             addNewCard(c1, false);
+            gameHelper.points_bank_hidden = gameHelper.points_bank;
             addNewCard(c2, true);
             addNewCard(c3, false);
-            gameHelper.points_bank_hidden = gameHelper.getPointsOfCard(c3,false);
+            gameHelper.points_bank_hidden = gameHelper.points_bank-gameHelper.points_bank_hidden;
             gameHelper.points_bank -= gameHelper.points_bank_hidden;
             drawPictureBackcard(c3, false, cardIndexBank-1);
             addNewCard(c4, true);
@@ -242,7 +243,6 @@ namespace Hearts
             {
                 if (gameHelper.isNewGamePossible())
                 {
-                    Console.WriteLine(gameHelper.total_points);
                     this.newRound();
                 }
                 else
